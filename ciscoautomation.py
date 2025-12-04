@@ -74,13 +74,14 @@ with open ('ip.txt') as IP_list:
                 print('Connecting to the device ' + IP)
                 config_commands = ['int range fa1/3 - 12', 'switch mode access', 'switchport access vlan 4','descr Access_Port', 'int range fa1/12 - 15', 'swit mode trunk']
                 config_commands1 = ['vtp ver 2', 'vtp domain cisco', 'vtp mode transparent', 'ip default-gateway 192.168.122.1', 'ntp server 192.168.122.1']
+                config_commands2 = "This is just bullshit for figure out git"
                 output = net_connect.send_config_set(config_commands)
                 output1 = net_connect.send_config_set(config_commands1)
                 print(output)
                 print(output1)
         except:
                 print('connection failed to ' + IP)
-  # imbedded forloop? for creating vlans in a range, can also be edited to add whatever you would like 
+  # imbedded forloop for creating vlans in a range, can also be edited to add whatever you would like 
         for n in range (2,6):
                 try:
                     net_connect = ConnectHandler(**switch)
@@ -93,4 +94,4 @@ with open ('ip.txt') as IP_list:
                     print('connection failed to ' + IP)
 
 execution_time  = (time.time() - start_time) 
-print('Execution time in seconds: ' + str(execution_time)) # shows script run time
+print('Execution time in seconds: ' + str(execution_time)) 
