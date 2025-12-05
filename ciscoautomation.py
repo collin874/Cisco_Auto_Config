@@ -72,9 +72,8 @@ with open ('ip.txt') as IP_list:
         try:                                                            
                 net_connect = ConnectHandler(**switch)
                 print('Connecting to the device ' + IP)
-                config_commands = ['int range fa1/3 - 12', 'switch mode access', 'switchport access vlan 4','descr Access_Port', 'int range fa1/12 - 15', 'swit mode trunk']
+                config_commands = ['int range fa1/3 - 12', 'switch mode access', 'switchport access vlan 4','descr Access_Port', 'int range fa1/12 - 15']
                 config_commands1 = ['vtp ver 2', 'vtp domain cisco', 'vtp mode transparent', 'ip default-gateway 192.168.122.1', 'ntp server 192.168.122.1']
-                config_commands2 = "This is just bullshit for figure out git"
                 output = net_connect.send_config_set(config_commands)
                 output1 = net_connect.send_config_set(config_commands1)
                 print(output)
