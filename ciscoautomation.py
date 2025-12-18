@@ -91,6 +91,3 @@ with open ('ip.txt') as IP_list:
                     print (IP + ' Sucessfully Configured')
                 except:
                     print('connection failed to ' + IP)
-
-execution_time  = (time.time() - start_time) 
-print('Execution time in seconds: ' + str(execution_time)) 
